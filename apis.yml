@@ -1,25 +1,117 @@
 aid: avvo
+
 name: Avvo
-description: 'Avvo is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by coatue) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://images.avvo.com/production/images/social/Avvo_logo_share.png
+
+description: Avvo is an online legal services marketplace connecting consumers with attorneys across the United States. Founded in 2006, Avvo
+  provides a searchable lawyer directory, free legal Q&A, client reviews, and a proprietary rating system to help users find and evaluate legal
+  professionals. The platform also offers tools for lawyers to manage their online presence and attract clients.
+
 url: https://raw.githubusercontent.com/api-evangelist/avvo/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
-- Company
-apis: []
+- LegalTech
+- Marketplace
+- Directory
+- Reviews
+- ConsumerServices
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- coatue
+
 common:
+- type: Spectral
+  url: rules/avvo-rules.yml
+- type: JSONLD
+  url: json-ld/avvo-context.jsonld
+- type: Vocabulary
+  url: vocabulary/avvo-vocabulary.yml
+- type: DataModel
+  url: data-model/avvo-data-model.yml
+- type: Security
+  url: security/avvo-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/avvo-conformance.yml
+- type: LLMsTxt
+  url: llms/avvo-llms.txt
+- type: SecurityTxt
+  url: well-known/avvo-stories-security.txt
+- type: SecurityTxt
+  url: well-known/avvo-security.txt
+- type: SecurityTxt
+  url: well-known/avvo-changelog-security.txt
+- type: SecurityTxt
+  url: well-known/avvo-api-security.txt
+- type: WellKnown
+  url: well-known/avvo-well-known.yml
+- type: Hosts
+  url: hosts/avvo-hosts.yml
+- type: Vendors
+  url: vendors/avvo-vendors.yml
+- type: SDKs
+  url: packages/avvo-packages.yml
+- type: Packages
+  url: packages/avvo-packages.yml
+- type: Support
+  url: https://www.avvo.com/support
+- type: PrivacyPolicy
+  url: https://www.avvo.com/privacy-lawyer.html
+- type: Login
+  url: https://www.avvo.com/account/login
+- type: GitHubOrganization
+  url: https://github.com/avvo
+- type: VulnerabilityDisclosure
+  url: security/avvo-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/avvo-domain-security.yml
 - type: Website
   url: https://www.avvo.com
+
+apis:
+- aid: avvo:avvo-api
+  name: Avvo API
+  description: 'Avvo API as documented publicly: 9 operations. Contract generated from the documentation by API Evangelist (2026-10-22); not the
+    provider''s own document.'
+  humanURL: https://api.avvo.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/avvo-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/avvo-get-api5-reviews-response-schema.json
+  - type: JSONSchema
+    url: json-schema/avvo-get-api5-reviews-reviewid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/avvo-get-api5-reviews-reviewid-comments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/avvo-post-api5-reviews-reviewid-comments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/avvo-get-api5-reviews-comments-reviewcommentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/avvo-put-api5-reviews-comments-reviewcommentid-response-schema.json
+
+x-backed-by:
+- coatue
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 27
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,34 @@
+generated: '2026-10-22'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io) ; github.com/avvo
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (avvo.com, security/avvo-domain-security.yml,
+  security/avvo-vulnerability-disclosure.yml) or its accepted GitHub org (avvo).'
+packages:
+- name: json_api_resource
+  registry: github
+  url: https://github.com/avvo/json_api_resource
+  language: Ruby
+  official: true
+  version: null
+  published: '2023-01-20'
+  source_repo: https://github.com/avvo/json_api_resource
+  evidence: repository in github.com/avvo, whose profile names the provider's domain
+- name: avvo_api
+  registry: github
+  url: https://github.com/avvo/avvo_api
+  language: Ruby
+  official: true
+  version: null
+  published: '2023-01-18'
+  source_repo: https://github.com/avvo/avvo_api
+  evidence: repository in github.com/avvo, whose profile names the provider's domain
+- name: json_api_resource_connections
+  registry: github
+  url: https://github.com/avvo/json_api_resource_connections
+  language: Ruby
+  official: true
+  version: null
+  published: '2018-01-04'
+  source_repo: https://github.com/avvo/json_api_resource_connections
+  evidence: repository in github.com/avvo, whose profile names the provider's domain

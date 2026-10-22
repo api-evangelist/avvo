@@ -1,0 +1,463 @@
+openapi: 3.1.0
+info:
+  title: Avvo API
+  version: '2026-10-22'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-22: 9 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Avvo has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 8
+    documentation: 1
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-22'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://api.avvo.com
+paths:
+  /api/2/oauth2/authorize:
+    get:
+      operationId: get_api_2_oauth2_authorize
+      tags:
+      - Api
+      summary: OAuth2 authentication step to obtain an auth code and access token.
+      x-source: https://api.avvo.com
+      parameters:
+      - name: redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The direct URI from your app.
+      - name: client_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The Avvo app client id.
+      - name: client_secret
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The Avvo app client secret.
+      - name: response_type
+        in: query
+        required: true
+        schema:
+          type: string
+        description: code_and_token
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_2_oauth2_authorize
+      tags:
+      - Api
+      summary: POST /api/2/oauth2/authorize
+      x-source: https://api.avvo.com
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApi2Oauth2AuthorizeResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST --data 'redirect_uri=<the direct URI from my app>&client_id=<the avvo app client id>&client_secret=<the avvo app\
+          \ secret I only got to see once when I first registered the app>&response_type=code_and_token' https://api.avvo.com/api/2/oauth2/authorize\n\
+          \ OAuth steps 4 and 5.\n This does not redirect you, but it will give you the redirect URL. You can paste that in a browser. Then you\
+          \ can s"
+  /api/4/lawyers.json:
+    get:
+      operationId: get_api_4_lawyers_json
+      tags:
+      - Api
+      summary: GET /api/4/lawyers.json
+      x-source: https://api.avvo.com
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApi4LawyersJsonResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl https://api.avvo.com/api/4/lawyers.json  -H \"Authorization: Bearer abd90df5f27a7b170cd775abf89d632b350b7c1c9d53e08b340cd9832ce52c2c\"\
+          \ \n require \"oauth2\" \n callback_url = \"https://www.yoursite/oauth2/callback\" \n client = OAuth2 :: Client . new ( < client_id\
+          \ > , < client_secret > , site: \"https://api.avvo.com\" , authorize_url: ” / api / 2 / oauth2 / authorize ” , token_url: “ / api /\
+          \ 2 / oauth2 "
+  /api/5/reviews:
+    get:
+      operationId: get_api_5_reviews
+      tags:
+      - Api
+      summary: GET /api/5/reviews
+      x-source: https://api.avvo.com
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApi5ReviewsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'api.avvo.com/api/5/reviews?page=1&per_page=2'  --header 'Authorization: Bearer <jwt>' \n require\
+          \ \"uri\" \n require \"net/http\" \n url = URI ( \"http://api.avvo.com/api/5/reviews?page=1&per_page=2\" ) \n http = Net :: HTTP . new\
+          \ ( url . host , url . port ); \n request = Net :: HTTP :: Get . new ( url ) \n request [ \"Authorization\" ] = \"Bearer <jwt>\" \n\
+          \ response = http . request "
+  /api/5/reviews/comments/{reviewcommentid}:
+    get:
+      operationId: get_api_5_reviews_comments_reviewcommentid
+      tags:
+      - Api
+      summary: GET /api/5/reviews/comments/{reviewCommentId}
+      x-source: https://api.avvo.com
+      parameters:
+      - name: reviewcommentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApi5ReviewsCommentsReviewcommentidResponse'
+      x-evidence:
+        kind: code-example
+        language: ruby
+        snippet: URI ( "http://api.avvo.com/api/5/reviews/comments/:review_comment_id"
+    put:
+      operationId: put_api_5_reviews_comments_reviewcommentid
+      tags:
+      - Api
+      summary: PUT /api/5/reviews/comments/{reviewCommentId}
+      x-source: https://api.avvo.com
+      parameters:
+      - name: reviewcommentid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApi5ReviewsCommentsReviewcommentidRequest'
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutApi5ReviewsCommentsReviewcommentidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT 'api.avvo.com/api/5/reviews/comments/:review_comment_id'  --header 'Authorization: Bearer <jwt>'  --header\
+          \ 'Content-Type: application/json'  --data '{\"body\": \"<comment_body>\"}' \n require \"uri\" \n require \"net/http\" \n url = URI\
+          \ ( \"http://api.avvo.com/api/5/reviews/comments/:review_comment_id\" ) \n http = Net :: HTTP . new ( url . host , url . port ); \n\
+          \ request = Net :: HTTP :: Put "
+  /api/5/reviews/{reviewid}:
+    get:
+      operationId: get_api_5_reviews_reviewid
+      tags:
+      - Api
+      summary: GET /api/5/reviews/{reviewId}
+      x-source: https://api.avvo.com
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApi5ReviewsReviewidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'api.avvo.com/api/5/reviews/:review_id'  --header 'Authorization: Bearer <jwt>' \n require \"\
+          uri\" \n require \"net/http\" \n url = URI ( \"http://api.avvo.com/api/5/reviews/:review_id\" ) \n http = Net :: HTTP . new ( url .\
+          \ host , url . port ); \n request = Net :: HTTP :: Get . new ( url ) \n request [ \"Authorization\" ] = \"Bearer <jwt>\" \n response\
+          \ = http . request ( request ) \n "
+  /api/5/reviews/{reviewid}/comments:
+    get:
+      operationId: get_api_5_reviews_reviewid_comments
+      tags:
+      - Api
+      summary: GET /api/5/reviews/{reviewId}/comments
+      x-source: https://api.avvo.com
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApi5ReviewsReviewidCommentsResponse'
+      x-evidence:
+        kind: code-example
+        language: ruby
+        snippet: URI ( "http://api.avvo.com/api/5/reviews/:review_id/comments"
+    post:
+      operationId: post_api_5_reviews_reviewid_comments
+      tags:
+      - Api
+      summary: POST /api/5/reviews/{reviewId}/comments
+      x-source: https://api.avvo.com
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApi5ReviewsReviewidCommentsRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApi5ReviewsReviewidCommentsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST 'api.avvo.com/api/5/reviews/:review_id/comments'  --header 'Authorization: Bearer <jwt>'  --header 'Content-Type:\
+          \ application/json'  --data '{\"body\": \"<comment_body>\"}' \n require \"uri\" \n require \"net/http\" \n url = URI ( \"http://api.avvo.com/api/5/reviews/:review_id/comments\"\
+          \ ) \n http = Net :: HTTP . new ( url . host , url . port ); \n request = Net :: HTTP :: Post . new ( url ) "
+components:
+  schemas:
+    PostApi2Oauth2AuthorizeResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+    GetApi4LawyersJsonResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+    GetApi5ReviewsResponse:
+      type: object
+      properties:
+        reviews:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              lawyer_id:
+                type: integer
+              lawyer_prefix:
+                type:
+                - string
+                - 'null'
+              lawyer_firstname:
+                type: string
+              lawyer_middlename:
+                type: string
+              lawyer_lastname:
+                type: string
+              lawyer_suffix:
+                type:
+                - string
+                - 'null'
+              rating:
+                type: integer
+              title:
+                type: string
+              body:
+                type: string
+              comments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    body:
+                      type: string
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+              review_type:
+                type: string
+              created_at:
+                type: integer
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+            current_page:
+              type: integer
+            per_page:
+              type: integer
+            total_pages:
+              type: integer
+            total_entries:
+              type: integer
+    GetApi5ReviewsCommentsReviewcommentidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+            message:
+              type: string
+    PutApi5ReviewsCommentsReviewcommentidRequest:
+      type: object
+      properties:
+        body:
+          type: string
+    PutApi5ReviewsCommentsReviewcommentidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+            message:
+              type: string
+    GetApi5ReviewsReviewidResponse:
+      type: object
+      properties:
+        reviews:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              lawyer_id:
+                type: integer
+              lawyer_prefix:
+                type:
+                - string
+                - 'null'
+              lawyer_firstname:
+                type: string
+              lawyer_middlename:
+                type: string
+              lawyer_lastname:
+                type: string
+              lawyer_suffix:
+                type:
+                - string
+                - 'null'
+              rating:
+                type: integer
+              title:
+                type: string
+              body:
+                type: string
+              comments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    body:
+                      type: string
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+              review_type:
+                type: string
+              created_at:
+                type: integer
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+    GetApi5ReviewsReviewidCommentsResponse:
+      type: object
+      properties:
+        review_comment_id:
+          type: integer
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+            message:
+              type: string
+    PostApi5ReviewsReviewidCommentsRequest:
+      type: object
+      properties:
+        body:
+          type: string
+    PostApi5ReviewsReviewidCommentsResponse:
+      type: object
+      properties:
+        review_comment_id:
+          type: integer
+        meta:
+          type: object
+          properties:
+            status:
+              type: integer
+            message:
+              type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api

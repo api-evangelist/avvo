@@ -1,0 +1,46 @@
+---
+image: https://images.avvo.com/production/images/social/Avvo_logo_share.png
+description: Get help with Avvo. Learn about the Avvo Rating, claim or edit your attorney profile, manage reviews, and get answers for attorneys and consumers.
+---
+
+Search
+
+# Avvo Support
+
+Welcome to Avvo Support — your hub for help with profiles, ratings, reviews, messaging, and more. Use the search box or choose a topic below.
+
+## Popular topics
+
+### [Understanding the Avvo Rating](https://www.avvo.com/support/articles/1009448-understanding-the-avvo-ratin.html)
+
+The Avvo Rating is an objective 1–10 score that weighs an attorney's experience, achievements, peer endorsements, and disciplinary history into a single, easy-to-read number.
+
+### [What are Avvo Badges?](https://www.avvo.com/support/articles/913950-what-are-avvo-badges.html)
+
+Avvo Badges are free, merit-based awards attorneys can earn and display to showcase their credentials, including the Clients' Choice and Top Contributor Awards.
+
+### [How can I increase my Avvo rating?](https://www.avvo.com/support/articles/913949-how-can-i-increase-my-avvo-rating.html)
+
+Learn which factors influence an attorney's Avvo Rating and what steps attorneys can take to improve their score
+
+## Support for attorneys
+
+- [How do I contact Avvo?](https://www.avvo.com/support/requests/new)
+- [How do I claim my profile?](https://www.avvo.com/support/articles/913935-how-do-i-claim-my-profile.html)
+- [How do I edit my profile?](https://www.avvo.com/support/articles/913938-how-do-i-edit-my-profile.html)
+- [How are ratings and reviews different?](https://www.avvo.com/support/articles/914018-reviews-and-the-avvo-rating.html)
+- [How do I answer questions on Avvo?](https://www.avvo.com/support/articles/914029-how-do-i-answer-questions-on-avvo.html)
+
+[See all attorney FAQs](https://www.avvo.com/support/categories/attorneys)
+
+## Support for customers
+
+- [How do I contact Avvo?](https://www.avvo.com/support/requests/new)
+- [How do I search for an attorney?](https://www.avvo.com/support/articles/914118-how-do-i-search-for-an-attorney.html)
+- [How do I view and send messages?](https://www.avvo.com/support/articles/914121-how-do-i-view-and-send-messages.html)
+- [How do I post a legal question?](https://www.avvo.com/support/articles/914113-ask-a-lawyer-faq.html)
+- [Are my messages private and secure?](https://www.avvo.com/support/articles/914120-are-my-messages-private-and-secure.html)
+
+[See all customer FAQs](https://www.avvo.com/support/categories/customers)
+
+[Can’t find what you’re looking for? Contact us here.](https://www.avvo.com/support/requests/new)

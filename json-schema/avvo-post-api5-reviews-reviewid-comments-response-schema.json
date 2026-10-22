@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/avvo/main/json-schema/avvo-post-api5-reviews-reviewid-comments-response-schema.json",
+  "title": "PostApi5ReviewsReviewidCommentsResponse",
+  "x-generated": "2026-10-22",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/avvo-openapi-generated.yml#/components/schemas/PostApi5ReviewsReviewidCommentsResponse",
+  "type": "object",
+  "properties": {
+    "review_comment_id": {
+      "type": "integer"
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@vocab": "https://avvo.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "avvo": "https://avvo.com/schema#",
+    "PostApi2Oauth2AuthorizeResponse": "avvo:PostApi2Oauth2AuthorizeResponse",
+    "id": {
+      "@id": "avvo:id",
+      "@type": "xsd:integer"
+    },
+    "GetApi4LawyersJsonResponse": "avvo:GetApi4LawyersJsonResponse",
+    "GetApi5ReviewsResponse": "avvo:GetApi5ReviewsResponse",
+    "reviews": {
+      "@id": "avvo:reviews",
+      "@container": "@list"
+    },
+    "meta": {
+      "@id": "avvo:meta"
+    },
+    "GetApi5ReviewsCommentsReviewcommentidResponse": "avvo:GetApi5ReviewsCommentsReviewcommentidResponse",
+    "PutApi5ReviewsCommentsReviewcommentidRequest": "avvo:PutApi5ReviewsCommentsReviewcommentidRequest",
+    "body": {
+      "@id": "avvo:body",
+      "@type": "xsd:string"
+    },
+    "PutApi5ReviewsCommentsReviewcommentidResponse": "avvo:PutApi5ReviewsCommentsReviewcommentidResponse",
+    "GetApi5ReviewsReviewidResponse": "avvo:GetApi5ReviewsReviewidResponse",
+    "GetApi5ReviewsReviewidCommentsResponse": "avvo:GetApi5ReviewsReviewidCommentsResponse",
+    "review_comment_id": {
+      "@id": "avvo:review_comment_id",
+      "@type": "xsd:integer"
+    },
+    "PostApi5ReviewsReviewidCommentsRequest": "avvo:PostApi5ReviewsReviewidCommentsRequest",
+    "PostApi5ReviewsReviewidCommentsResponse": "avvo:PostApi5ReviewsReviewidCommentsResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Avvo API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Avvo's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-22) from openapi/_ae-authored/avvo-openapi-generated.yml.",
+  "dcterms:created": "2026-10-22",
+  "dcterms:source": [
+    "openapi/_ae-authored/avvo-openapi-generated.yml"
+  ]
+}

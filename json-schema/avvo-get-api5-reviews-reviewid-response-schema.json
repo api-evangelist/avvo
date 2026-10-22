@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/avvo/main/json-schema/avvo-get-api5-reviews-reviewid-response-schema.json",
+  "title": "GetApi5ReviewsReviewidResponse",
+  "x-generated": "2026-10-22",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/avvo-openapi-generated.yml#/components/schemas/GetApi5ReviewsReviewidResponse",
+  "type": "object",
+  "properties": {
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "lawyer_id": {
+            "type": "integer"
+          },
+          "lawyer_prefix": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lawyer_firstname": {
+            "type": "string"
+          },
+          "lawyer_middlename": {
+            "type": "string"
+          },
+          "lawyer_lastname": {
+            "type": "string"
+          },
+          "lawyer_suffix": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "review_type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
